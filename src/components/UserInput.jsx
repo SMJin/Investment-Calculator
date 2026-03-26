@@ -1,24 +1,22 @@
+import { useState } from "react"
+import NumberInput from "./NumberInput";
+
 export default function UserInput() {
+    const [userData, setUserData] = useState({
+        initialInvestment: 1200,
+        annualInvestment: 900,
+        expectedReturn: 5.5,
+        duration: 12,
+    });
+
     return <section id="user-input">
         <div className="input-group">
-            <p>
-                <label>Initial Investment</label>
-                <input type="number" required />
-            </p>
-            <p>
-                <label>Annual Investment</label>
-                <input type="number" required />
-            </p>
+            <NumberInput label={`Initial Investment`} />
+            <NumberInput label={`Annual Investment`} />
         </div>
         <div className="input-group">
-            <p>
-                <label>Expected Return</label>
-                <input type="number" required />
-            </p>
-            <p>
-                <label>Duration</label>
-                <input type="number" required />
-            </p>
+            <NumberInput label={`Expected Return`} />
+            <NumberInput label={`Duration`} />
         </div>
     </section>
 }
