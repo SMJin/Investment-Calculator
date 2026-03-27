@@ -12,6 +12,8 @@ function App() {
       duration: 12,
   });
 
+  const inputIsValid = annualData.duration >= 1;
+
   const handleInputNumber = (inputIdentifier, newValue) => {
       setAnnualData(prev => {
           return {
@@ -25,7 +27,8 @@ function App() {
     <main>
       <Header />
       <UserInput onChangeNumbers={handleInputNumber} />
-      <Results annualData={annualData} />
+      {!inputIsValid && <p className="center">Please enter a duration greater than zero.</p>}
+      {inputIsValid && <Results annualData={annualData} />}
     </main>
   )
 }
