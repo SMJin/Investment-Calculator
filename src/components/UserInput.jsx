@@ -7,11 +7,13 @@ export default function UserInput({ onChangeNumbers }) {
                 <Input 
                     keyData={`initialInvestment`}
                     label={`Initial Investment`}
+                    initialValue={1500}
                     onChange={onChangeNumbers}
                 />
                 <Input 
                     keyData={`annualInvestment`}
                     label={`Annual Investment`}
+                    initialValue={900}
                     onChange={onChangeNumbers}
                 />
             </div>
@@ -19,11 +21,13 @@ export default function UserInput({ onChangeNumbers }) {
                 <Input 
                     keyData={`expectedReturn`}
                     label={`Expected Return`}
+                    initialValue={5.5}
                     onChange={onChangeNumbers}
                 />
                 <Input 
                     keyData={`duration`}
                     label={`Duration`}
+                    initialValue={12}
                     onChange={onChangeNumbers}
                 />
             </div>
